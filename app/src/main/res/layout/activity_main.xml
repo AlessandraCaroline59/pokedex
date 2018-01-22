@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="pokedex.thepokemoncompany.com.pokedex.activities.MainActivity"
+    android:background="@android:color/background_light">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@android:color/holo_red_dark">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="73dp"
+                android:layout_height="78dp"
+                app:srcCompat="@drawable/pikachu"
+                android:id="@+id/imageView12"
+                android:layout_alignParentTop="true"
+                android:layout_alignLeft="@+id/AllPokemonsId"
+                android:layout_alignStart="@+id/AllPokemonsId"
+                android:layout_marginTop="13dp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/title_company"
+                android:layout_alignTop="@+id/imageView12"
+                android:layout_alignRight="@+id/textView4"
+                android:layout_alignEnd="@+id/textView4"
+                android:id="@+id/imageView"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srcCompat="@drawable/title_welcome"
+        android:id="@+id/imageView9" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@android:color/holo_red_dark"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="7dp">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:text="All"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView4"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:layout_above="@+id/AllPokemonsId"
+                    android:layout_alignLeft="@+id/AllPokemonsId"
+                    android:layout_alignStart="@+id/AllPokemonsId"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:textStyle="normal|bold"
+                    android:paddingRight="8dp" />
+
+                <TextView
+                    android:text="Strongest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView5"
+                    android:textColor="@android:color/white"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:layout_alignBottom="@+id/textView4"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="18sp"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:textStyle="normal|bold" />
+
+                <TextView
+                    android:text="My"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView6"
+                    android:textColor="@android:color/white"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:layout_alignBaseline="@+id/textView5"
+                    android:layout_alignBottom="@+id/textView5"
+                    android:layout_alignRight="@+id/MyPokemonsId"
+                    android:layout_alignEnd="@+id/MyPokemonsId"
+                    android:textSize="18sp"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:textStyle="normal|bold"
+                    android:paddingLeft="8dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    app:srcCompat="@drawable/pokeball_1"
+                    android:layout_marginLeft="23dp"
+                    android:layout_marginStart="23dp"
+                    android:id="@+id/AllPokemonsId"
+                    android:layout_alignTop="@+id/StrongestPokemonsId"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_weight="1"
+                    android:paddingRight="5dp" />
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    app:srcCompat="@drawable/pokeball_2"
+                    android:id="@+id/StrongestPokemonsId"
+                    android:layout_alignTop="@+id/MyPokemonsId"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:paddingLeft="3dp" />
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    app:srcCompat="@drawable/pokeball_3"
+                    android:id="@+id/MyPokemonsId"
+                    android:layout_marginRight="18dp"
+                    android:layout_marginEnd="18dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:paddingLeft="5dp" />
+            </TableRow>
+
+        </TableLayout>
+
+    </FrameLayout>
+
+</RelativeLayout>
