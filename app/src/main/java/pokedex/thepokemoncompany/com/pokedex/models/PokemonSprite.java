@@ -1,10 +1,12 @@
 package pokedex.thepokemoncompany.com.pokedex.models;
 
+import java.io.Serializable;
+
 /**
  * Created by Alessandra on 20/01/2018.
  */
 
-public class PokemonSprite {
+public class PokemonSprite implements Serializable {
     private String front_default;
 
     public String getFront_default() {

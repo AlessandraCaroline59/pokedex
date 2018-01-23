@@ -2,13 +2,14 @@ package pokedex.thepokemoncompany.com.pokedex.models;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by Alessandra on 20/01/2018.
  */
 
-public class Pokemon {
+public class Pokemon implements Serializable {
     private Integer id;
     private String name;
     private Integer base_experience;

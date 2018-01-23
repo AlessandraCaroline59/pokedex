@@ -1,6 +1,8 @@
 package pokedex.thepokemoncompany.com.pokedex.adapters;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +14,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import java.util.ArrayList;
 import pokedex.thepokemoncompany.com.pokedex.R;
+import pokedex.thepokemoncompany.com.pokedex.activities.DetailsActivity;
 import pokedex.thepokemoncompany.com.pokedex.interfaces.PokemonService;
 import pokedex.thepokemoncompany.com.pokedex.models.Pokemon;
 import pokedex.thepokemoncompany.com.pokedex.models.Result;
@@ -28,13 +31,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ResultAdapter extends ArrayAdapter<Result> {
 
-    private Context context;
+    private Activity context;
     private ArrayList<Result> dataset = new ArrayList<>();
     private Pokemon pokemon;
     Retrofit retrofit = new Retrofit.Builder().baseUrl(Constants.BASE_URL).
             addConverterFactory(GsonConverterFactory.create()).build();
 
-    public ResultAdapter(Context context, ArrayList<Result> results) {
+    public ResultAdapter(Activity context, ArrayList<Result> results) {
         super(context, 0, results);
         this.context = context;
     }
@@ -52,7 +55,14 @@ public class ResultAdapter extends ArrayAdapter<Result> {
 
         pokemonNumber.setText("#000" + result.getId().toString());
         pokemonName.setText(result.getName());
-        Glide.with(context).load("https://pokeapi.co/media/sprites/pokemon/" + result.getId().toString() + ".png").centerCrop().crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).into(pokemonImage);
+        Glide.with(context)
+                .load("https://pokeapi.co/media/sprites/pokemon/"
+                        + result.getId().toString()
+                        + ".png")
+                .centerCrop()
+                .crossFade()
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .into(pokemonImage);
 
         showDetails(convertView, result);
 
@@ -82,7 +92,12 @@ public class ResultAdapter extends ArrayAdapter<Result> {
                         public void onResponse(Call<Pokemon> call, Response<Pokemon> response) {
                             if(response.isSuccessful()){
                                 pokemon = response.body();
-                                Log.e(Constants.TAG, "Valores: " + pokemon.getName());
+                                //Log.e(Constants.TAG, "Valores: " + pokemon.getName());
+                                Intent intent = new Intent(context, DetailsActivity.class);
+                                intent.putExtra("pokemon", pokemon);
+
+                                context.startActivity( intent );
+
                             }else{
                                 Log.e(Constants.TAG, "onResponse: " + response.errorBody());
                             }

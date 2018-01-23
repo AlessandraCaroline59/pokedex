@@ -1,25 +1,540 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_details"
+    android:id="@+id/background_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="pokedex.thepokemoncompany.com.pokedex.activities.DetailsActivity">
+    tools:context="pokedex.thepokemoncompany.com.pokedex.activities.DetailsActivity"
+    android:background="@android:color/holo_red_dark">
 
-    <TextView
-        android:text="Olá!!!"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginLeft="80dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="35dp"
-        android:id="@+id/textView3"
-        android:textSize="30sp" />
+        android:weightSum="1">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        app:srcCompat="@mipmap/ic_launcher"
+                        android:id="@+id/pokemonImageId"
+                        android:background="@android:color/background_light"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:text="TextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/pokemonId"
+                        android:textSize="14sp"
+                        android:layout_below="@+id/textView26"
+                        android:layout_alignLeft="@+id/pokemonNameId"
+                        android:layout_alignStart="@+id/pokemonNameId"
+                        android:paddingLeft="10dp"
+                        android:textColor="@android:color/background_light" />
+
+                    <TextView
+                        android:text="TextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/pokemonNameId"
+                        android:textSize="@dimen/result_name"
+                        android:layout_alignParentTop="true"
+                        android:layout_toRightOf="@+id/pokemonImageId"
+                        android:layout_alignRight="@+id/baseId"
+                        android:layout_alignEnd="@+id/baseId"
+                        android:paddingLeft="10dp"
+                        android:textColor="@android:color/background_light" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingTop="15dp"
+                        android:layout_marginLeft="10dp">
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:text="Type 2:"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/textView12"
+                                android:layout_weight="1"
+                                android:textColor="@android:color/background_light" />
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@android:color/background_light">
+
+                                <TextView
+                                    android:text="TextView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/textView18" />
+                            </FrameLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:text="Type 1:"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/textView21"
+                                android:layout_weight="1"
+                                android:textColor="@android:color/background_light" />
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@android:color/background_light">
+
+                                <TextView
+                                    android:text="TextView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/textView20" />
+                            </FrameLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:text="Base XP"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/textView26"
+                                android:layout_below="@+id/pokemonNameId"
+                                android:layout_alignLeft="@+id/textView19"
+                                android:layout_alignStart="@+id/textView19"
+                                android:textSize="14sp"
+                                android:textAlignment="viewEnd"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp"
+                                android:paddingTop="5dp"
+                                android:textColor="@android:color/background_light" />
+
+                            <TextView
+                                android:text="Text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/baseId"
+                                android:layout_alignBottom="@+id/pokemonId"
+                                android:layout_alignLeft="@+id/sdefId"
+                                android:layout_alignStart="@+id/sdefId"
+                                android:textAlignment="viewEnd"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp"
+                                android:paddingBottom="5dp"
+                                android:textColor="@android:color/background_dark"
+                                android:background="@android:color/background_light" />
+
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="@dimen/layout_margin_top">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Attack"
+                        android:layout_width="@dimen/labels_width"
+                        android:layout_height="@dimen/labels_height"
+                        android:id="@+id/textView13"
+                        android:textAlignment="center"
+                        android:layout_below="@+id/pokemonImageId"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:paddingTop="@dimen/labels_padding_top"
+                        android:textColor="@android:color/background_light" />
+
+                    <TextView
+                        android:text="Text"
+                        android:layout_width="@dimen/result_width"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textView13"
+                        android:id="@+id/attackId"
+                        android:textSize="14sp"
+                        android:textAlignment="center"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:paddingTop="@dimen/result_padding_top"
+                        android:textColor="@android:color/background_dark"
+                        android:background="@android:color/background_light" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text="Defense"
+                        android:layout_width="@dimen/labels_width"
+                        android:layout_height="@dimen/labels_height"
+                        android:id="@+id/textView14"
+                        android:textAlignment="center"
+                        android:layout_alignBaseline="@+id/textView13"
+                        android:layout_alignBottom="@+id/textView13"
+                        android:layout_toLeftOf="@+id/hpId"
+                        android:layout_toStartOf="@+id/hpId"
+                        android:paddingTop="@dimen/labels_padding_top"
+                        android:textColor="@android:color/background_light" />
+
+                    <TextView
+                        android:text="Text"
+                        android:layout_width="@dimen/result_width"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/defenseId"
+                        android:textAlignment="center"
+                        android:layout_alignBaseline="@+id/attackId"
+                        android:layout_alignBottom="@+id/attackId"
+                        android:layout_alignLeft="@+id/textView14"
+                        android:layout_alignStart="@+id/textView14"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:paddingTop="@dimen/result_padding_top"
+                        android:textColor="@android:color/background_dark"
+                        android:background="@android:color/background_light" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text="Speed"
+                        android:layout_width="@dimen/labels_width"
+                        android:layout_height="@dimen/labels_height"
+                        android:id="@+id/textView16"
+                        android:textAlignment="center"
+                        android:layout_alignBaseline="@+id/textView15"
+                        android:layout_alignBottom="@+id/textView15"
+                        android:layout_alignRight="@+id/pokemonId"
+                        android:layout_alignEnd="@+id/pokemonId"
+                        android:paddingTop="@dimen/labels_padding_top"
+                        android:textColor="@android:color/background_light" />
+
+                    <TextView
+                        android:text="Text"
+                        android:layout_width="@dimen/result_width"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/speedId"
+                        android:textAlignment="center"
+                        android:layout_alignBaseline="@+id/hpId"
+                        android:layout_alignBottom="@+id/hpId"
+                        android:layout_alignLeft="@+id/textView16"
+                        android:layout_alignStart="@+id/textView16"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:paddingTop="@dimen/result_padding_top"
+                        android:textColor="@android:color/background_dark"
+                        android:background="@android:color/background_light" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text="Special Attack"
+                        android:layout_width="@dimen/labels_width"
+                        android:layout_height="@dimen/labels_height"
+                        android:id="@+id/textView17"
+                        android:textAlignment="center"
+                        android:layout_above="@+id/satkId"
+                        android:layout_toRightOf="@+id/pokemonId"
+                        android:layout_toEndOf="@+id/pokemonId"
+                        android:textColor="@android:color/background_light" />
+
+                    <TextView
+                        android:text="Text"
+                        android:layout_width="@dimen/result_width"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/satkId"
+                        android:textAlignment="center"
+                        android:layout_alignBaseline="@+id/speedId"
+                        android:layout_alignBottom="@+id/speedId"
+                        android:layout_alignRight="@+id/textView17"
+                        android:layout_alignEnd="@+id/textView17"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:paddingTop="@dimen/result_padding_top"
+                        android:textColor="@android:color/background_dark"
+                        android:background="@android:color/background_light" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text="Special Defense"
+                        android:layout_width="@dimen/labels_width"
+                        android:layout_height="@dimen/labels_height"
+                        android:id="@+id/textView19"
+                        android:textAlignment="center"
+                        android:layout_alignBaseline="@+id/textView17"
+                        android:layout_alignBottom="@+id/textView17"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        android:textColor="@android:color/background_light" />
+
+                    <TextView
+                        android:text="Text"
+                        android:layout_width="@dimen/result_width"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/sdefId"
+                        android:textAlignment="center"
+                        android:layout_alignBaseline="@+id/satkId"
+                        android:layout_alignBottom="@+id/satkId"
+                        android:layout_alignLeft="@+id/textView19"
+                        android:layout_alignStart="@+id/textView19"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:paddingTop="@dimen/result_padding_top"
+                        android:textColor="@android:color/background_dark"
+                        android:background="@android:color/background_light" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text="Hp"
+                        android:layout_width="@dimen/labels_width"
+                        android:layout_height="@dimen/labels_height"
+                        android:id="@+id/textView15"
+                        android:textAlignment="center"
+                        android:layout_alignBaseline="@+id/textView14"
+                        android:layout_alignBottom="@+id/textView14"
+                        android:layout_alignLeft="@+id/pokemonId"
+                        android:layout_alignStart="@+id/pokemonId"
+                        android:paddingTop="@dimen/labels_padding_top"
+                        android:textColor="@android:color/background_light" />
+
+                    <TextView
+                        android:text="Text"
+                        android:layout_width="@dimen/result_width"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/hpId"
+                        android:textAlignment="center"
+                        android:layout_alignBaseline="@+id/defenseId"
+                        android:layout_alignBottom="@+id/defenseId"
+                        android:layout_toLeftOf="@+id/speedId"
+                        android:layout_toStartOf="@+id/speedId"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:paddingTop="@dimen/result_padding_top"
+                        android:textColor="@android:color/background_dark"
+                        android:background="@android:color/background_light" />
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:layout_below="@+id/sdefId"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                    android:text="Height"
+                        android:layout_height="wrap_content"
+                    android:id="@+id/textView9"
+                    android:textSize="14sp"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:layout_below="@+id/attackId"
+                    android:layout_toLeftOf="@+id/defenseId"
+                    android:layout_toStartOf="@+id/defenseId"
+                        android:layout_width="match_parent"
+                        android:textColor="@android:color/background_light" />
+
+                    <TextView
+                        android:text="TextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/pokemonHeightId"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:layout_below="@+id/textView11"
+                        android:layout_toLeftOf="@+id/textView11"
+                        android:layout_toStartOf="@+id/textView11"
+                        android:textColor="@android:color/background_dark"
+                        android:background="@android:color/background_light" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:text="Weight"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView11"
+                        android:textSize="14sp"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:layout_alignBaseline="@+id/textView9"
+                        android:layout_alignBottom="@+id/textView9"
+                        android:layout_toRightOf="@+id/textView9"
+                        android:layout_toEndOf="@+id/textView9"
+                        android:textColor="@android:color/background_light" />
+
+                    <TextView
+                        android:text="TextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/pokemonWeightId"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:layout_below="@+id/textView11"
+                        android:layout_alignRight="@+id/textView11"
+                        android:layout_alignEnd="@+id/textView11"
+                        android:textColor="@android:color/background_dark"
+                        android:background="@android:color/background_light" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/layout_margin_top">
+
+            <TextView
+                android:text="Abilities"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView10"
+                android:layout_weight="0"
+                android:textColor="@android:color/background_light" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:background="@android:color/background_light">
+
+            </FrameLayout>
+
+            <TextView
+                android:text="Moves"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView8"
+                android:layout_weight="0"
+                android:textColor="@android:color/background_light" />
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/background_light" />
+        </LinearLayout>
+
+    </LinearLayout>
+
 </RelativeLayout>

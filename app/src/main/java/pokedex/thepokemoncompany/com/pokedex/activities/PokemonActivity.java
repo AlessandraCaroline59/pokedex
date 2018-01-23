@@ -1,5 +1,6 @@
 package pokedex.thepokemoncompany.com.pokedex.activities;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +10,7 @@ import java.util.ArrayList;
 import pokedex.thepokemoncompany.com.pokedex.R;
 import pokedex.thepokemoncompany.com.pokedex.adapters.ResultAdapter;
 import pokedex.thepokemoncompany.com.pokedex.interfaces.PokemonService;
+import pokedex.thepokemoncompany.com.pokedex.models.Pokemon;
 import pokedex.thepokemoncompany.com.pokedex.models.PokemonResponse;
 import pokedex.thepokemoncompany.com.pokedex.models.Result;
 import pokedex.thepokemoncompany.com.pokedex.utils.Constants;
@@ -83,9 +85,11 @@ public class PokemonActivity extends AppCompatActivity {
     }
 
     private void showData(){
-        res = new ResultAdapter(getApplicationContext(),
+        res = new ResultAdapter(PokemonActivity.this,
                 allPokemonList);
 
         pokemonListView.setAdapter( res );
     }
+
+
 }
