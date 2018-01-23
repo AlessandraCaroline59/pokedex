@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="pokedex.thepokemoncompany.com.pokedex.activities.DetailsActivity"
-    android:background="@android:color/holo_red_dark">
+    android:background="@drawable/background_poke">
 
     <LinearLayout
         android:orientation="vertical"
@@ -40,7 +40,7 @@
                         android:layout_height="100dp"
                         app:srcCompat="@mipmap/ic_launcher"
                         android:id="@+id/pokemonImageId"
-                        android:background="@android:color/background_light"
+                        android:background="@color/colorAccent"
                         android:layout_alignParentTop="true"
                         android:layout_alignParentLeft="true"
                         android:layout_alignParentStart="true" />
@@ -91,7 +91,7 @@
                             android:layout_weight="1">
 
                             <TextView
-                                android:text="Type 2:"
+                                android:text="Type 1:"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/textView12"
@@ -99,16 +99,18 @@
                                 android:textColor="@android:color/background_light" />
 
                             <FrameLayout
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:background="@android:color/background_light">
+                                android:background="@color/colorAccent">
 
                                 <TextView
-                                    android:text="TextView"
-                                    android:layout_width="wrap_content"
+                                    android:text="-"
+                                    android:layout_width="70dp"
                                     android:layout_height="wrap_content"
-                                    android:id="@+id/textView18" />
+                                    android:id="@+id/type1Id"
+                                    android:textColor="@android:color/background_dark"
+                                    android:textAlignment="center" />
                             </FrameLayout>
                         </LinearLayout>
 
@@ -119,7 +121,7 @@
                             android:layout_weight="1">
 
                             <TextView
-                                android:text="Type 1:"
+                                android:text="Type 2:"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/textView21"
@@ -127,16 +129,18 @@
                                 android:textColor="@android:color/background_light" />
 
                             <FrameLayout
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:background="@android:color/background_light">
+                                android:background="@color/colorAccent">
 
                                 <TextView
-                                    android:text="TextView"
-                                    android:layout_width="wrap_content"
+                                    android:text="-"
+                                    android:layout_width="70dp"
                                     android:layout_height="wrap_content"
-                                    android:id="@+id/textView20" />
+                                    android:id="@+id/type2Id"
+                                    android:textColor="@android:color/background_dark"
+                                    android:textAlignment="center" />
                             </FrameLayout>
                         </LinearLayout>
 
@@ -174,7 +178,6 @@
                                 android:textColor="@android:color/background_light" />
 
                             <TextView
-                                android:text="Text"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/baseId"
@@ -186,7 +189,7 @@
                                 android:paddingRight="5dp"
                                 android:paddingBottom="5dp"
                                 android:textColor="@android:color/background_dark"
-                                android:background="@android:color/background_light" />
+                                android:background="@color/colorAccent" />
 
                         </LinearLayout>
 
@@ -228,7 +231,6 @@
                         android:textColor="@android:color/background_light" />
 
                     <TextView
-                        android:text="Text"
                         android:layout_width="@dimen/result_width"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/textView13"
@@ -240,7 +242,7 @@
                         android:layout_gravity="center_vertical|center_horizontal"
                         android:paddingTop="@dimen/result_padding_top"
                         android:textColor="@android:color/background_dark"
-                        android:background="@android:color/background_light" />
+                        android:background="@color/colorAccent" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -262,7 +264,6 @@
                         android:textColor="@android:color/background_light" />
 
                     <TextView
-                        android:text="Text"
                         android:layout_width="@dimen/result_width"
                         android:layout_height="wrap_content"
                         android:id="@+id/defenseId"
@@ -274,7 +275,7 @@
                         android:layout_gravity="center_vertical|center_horizontal"
                         android:paddingTop="@dimen/result_padding_top"
                         android:textColor="@android:color/background_dark"
-                        android:background="@android:color/background_light" />
+                        android:background="@color/colorAccent" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -296,7 +297,6 @@
                         android:textColor="@android:color/background_light" />
 
                     <TextView
-                        android:text="Text"
                         android:layout_width="@dimen/result_width"
                         android:layout_height="wrap_content"
                         android:id="@+id/speedId"
@@ -308,7 +308,7 @@
                         android:layout_gravity="center_vertical|center_horizontal"
                         android:paddingTop="@dimen/result_padding_top"
                         android:textColor="@android:color/background_dark"
-                        android:background="@android:color/background_light" />
+                        android:background="@color/colorAccent" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -328,7 +328,6 @@
                         android:textColor="@android:color/background_light" />
 
                     <TextView
-                        android:text="Text"
                         android:layout_width="@dimen/result_width"
                         android:layout_height="wrap_content"
                         android:id="@+id/satkId"
@@ -340,7 +339,7 @@
                         android:layout_gravity="center_vertical|center_horizontal"
                         android:paddingTop="@dimen/result_padding_top"
                         android:textColor="@android:color/background_dark"
-                        android:background="@android:color/background_light" />
+                        android:background="@color/colorAccent" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -361,7 +360,6 @@
                         android:textColor="@android:color/background_light" />
 
                     <TextView
-                        android:text="Text"
                         android:layout_width="@dimen/result_width"
                         android:layout_height="wrap_content"
                         android:id="@+id/sdefId"
@@ -373,7 +371,7 @@
                         android:layout_gravity="center_vertical|center_horizontal"
                         android:paddingTop="@dimen/result_padding_top"
                         android:textColor="@android:color/background_dark"
-                        android:background="@android:color/background_light" />
+                        android:background="@color/colorAccent" />
 
                 </LinearLayout>
 
@@ -396,7 +394,6 @@
                         android:textColor="@android:color/background_light" />
 
                     <TextView
-                        android:text="Text"
                         android:layout_width="@dimen/result_width"
                         android:layout_height="wrap_content"
                         android:id="@+id/hpId"
@@ -408,7 +405,7 @@
                         android:layout_gravity="center_vertical|center_horizontal"
                         android:paddingTop="@dimen/result_padding_top"
                         android:textColor="@android:color/background_dark"
-                        android:background="@android:color/background_light" />
+                        android:background="@color/colorAccent" />
                 </LinearLayout>
             </LinearLayout>
         </FrameLayout>
@@ -446,8 +443,6 @@
                         android:textColor="@android:color/background_light" />
 
                     <TextView
-                        android:text="TextView"
-                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/pokemonHeightId"
                         android:layout_weight="1"
@@ -456,7 +451,9 @@
                         android:layout_toLeftOf="@+id/textView11"
                         android:layout_toStartOf="@+id/textView11"
                         android:textColor="@android:color/background_dark"
-                        android:background="@android:color/background_light" />
+                        android:background="@color/colorAccent"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="50dp" />
 
                 </LinearLayout>
 
@@ -481,8 +478,7 @@
                         android:textColor="@android:color/background_light" />
 
                     <TextView
-                        android:text="TextView"
-                        android:layout_width="match_parent"
+                        android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:id="@+id/pokemonWeightId"
                         android:layout_weight="1"
@@ -491,7 +487,8 @@
                         android:layout_alignRight="@+id/textView11"
                         android:layout_alignEnd="@+id/textView11"
                         android:textColor="@android:color/background_dark"
-                        android:background="@android:color/background_light" />
+                        android:background="@color/colorAccent"
+                        android:layout_gravity="center_horizontal" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -516,7 +513,42 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.2"
-                android:background="@android:color/background_light">
+                android:background="@color/colorAccent"
+                android:id="@+id/frameid">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/layout_margin_top">
+
+                    <TextView
+                        android:text="-"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/ability1Id"
+                        android:layout_weight="1"
+                        android:textColor="@android:color/background_dark"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:text="-"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/ability2Id"
+                        android:layout_weight="1"
+                        android:textColor="@android:color/background_dark"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:text="-"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/ability3Id"
+                        android:layout_weight="1"
+                        android:textColor="@android:color/background_dark"
+                        android:textAlignment="center" />
+                </LinearLayout>
 
             </FrameLayout>
 
@@ -530,9 +562,10 @@
 
             <ListView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@android:color/background_light" />
+                android:layout_height="200dp"
+                android:layout_weight="0"
+                android:id="@+id/movesListViewId"
+                android:background="@color/colorAccent" />
         </LinearLayout>
 
     </LinearLayout>

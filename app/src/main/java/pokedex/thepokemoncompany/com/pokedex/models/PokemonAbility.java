@@ -12,6 +12,7 @@ import java.util.ArrayList;
 
 public class PokemonAbility implements Serializable {
     private Ability ability;
+    private Integer slot;
 
     public Ability getAbility() {
         return ability;
@@ -19,5 +20,13 @@ public class PokemonAbility implements Serializable {
 
     public void setAbility(Ability ability) {
         this.ability = ability;
+    }
+
+    public Integer getSlot() {
+        return slot;
+    }
+
+    public void setSlot(Integer slot) {
+        this.slot = slot;
     }
 }
