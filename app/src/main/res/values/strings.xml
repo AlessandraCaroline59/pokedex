@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">Pokedex</string>
+    <string name="app_name">Pokédex</string>
+    <string name="list_name">All Pokémons</string>
+    <string name="details_name">Details</string>
+    <string name="strongest_pokemon_name">Strongest Pokémons</string>
+    <string name="my_pokemons_name">My Pokémons</string>
+    <string name="loading_title">Loading...</string>
 </resources>

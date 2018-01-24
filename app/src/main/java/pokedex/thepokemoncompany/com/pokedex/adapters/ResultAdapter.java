@@ -17,8 +17,10 @@ import pokedex.thepokemoncompany.com.pokedex.R;
 import pokedex.thepokemoncompany.com.pokedex.activities.DetailsActivity;
 import pokedex.thepokemoncompany.com.pokedex.interfaces.PokemonService;
 import pokedex.thepokemoncompany.com.pokedex.models.Pokemon;
+import pokedex.thepokemoncompany.com.pokedex.models.PokemonList;
 import pokedex.thepokemoncompany.com.pokedex.models.Result;
 import pokedex.thepokemoncompany.com.pokedex.utils.Constants;
+import pokedex.thepokemoncompany.com.pokedex.utils.SpinnerDialog;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -34,11 +36,15 @@ public class ResultAdapter extends ArrayAdapter<Result> {
     private Activity context;
     private ArrayList<Result> dataset = new ArrayList<>();
     private Pokemon pokemon;
+    PokemonList pokemonListSingleton = PokemonList.getInstance();
+    SpinnerDialog spinnerDialog = new SpinnerDialog();
+
     Retrofit retrofit = new Retrofit.Builder().baseUrl(Constants.BASE_URL).
             addConverterFactory(GsonConverterFactory.create()).build();
 
     public ResultAdapter(Activity context, ArrayList<Result> results) {
         super(context, 0, results);
+        this.dataset = results;
         this.context = context;
     }
 
@@ -75,30 +81,46 @@ public class ResultAdapter extends ArrayAdapter<Result> {
     }
 
     public void addPokemonList(ArrayList<Result> allPokemonList) {
-        dataset.addAll(allPokemonList);
+        if (dataset.size() != allPokemonList.size()) {
+            dataset = pokemonListSingleton.getPokemonResultList();
+        }
         notifyDataSetChanged();
     }
 
+    public ArrayList<Result> getDataSet(){
+        return dataset;
+    }
 
     private void showDetails(View convertView, final Result result){
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ArrayList<Pokemon> pokemonList = pokemonListSingleton.getPokemonDetailsList();
+                Boolean hasPokemon = false;
+                for (int i = 0; i < pokemonList.size(); i++) {
+                    if (pokemonList.get(i).getId() == result.getId()) {
+                        hasPokemon = true;
+                        pokemon = pokemonList.get(i);
+                    }
+                }
+                if (!hasPokemon) {
+                    spinnerDialog.showLoadingDialog(context, context.getString(R.string.loading_title));
                     PokemonService service = retrofit.create(PokemonService.class);
                     Call<Pokemon> detailCall = service.getPokemonDetail(result.getId().toString());
 
                     detailCall.enqueue(new Callback<Pokemon>() {
                         @Override
                         public void onResponse(Call<Pokemon> call, Response<Pokemon> response) {
-                            if(response.isSuccessful()){
+                            if (response.isSuccessful()) {
                                 pokemon = response.body();
-                                //Log.e(Constants.TAG, "Valores: " + pokemon.getName());
+                                ArrayList<Pokemon> pokemons = new ArrayList<>();
+                                pokemons.add(pokemon);
+                                pokemonListSingleton.setPokemonDetailsList(pokemons);
                                 Intent intent = new Intent(context, DetailsActivity.class);
                                 intent.putExtra("pokemon", pokemon);
-
-                                context.startActivity( intent );
-
-                            }else{
+                                spinnerDialog.dismissLoadingDialog(context);
+                                context.startActivity(intent);
+                            } else {
                                 Log.e(Constants.TAG, "onResponse: " + response.errorBody());
                             }
                         }
@@ -108,6 +130,12 @@ public class ResultAdapter extends ArrayAdapter<Result> {
                             Log.e(Constants.TAG, "onFailure: " + t.getMessage());
                         }
                     });
+                } else {
+                    Intent intent = new Intent(context, DetailsActivity.class);
+                    intent.putExtra("pokemon", pokemon);
+
+                    context.startActivity(intent);
+                }
                 }
         });
     }

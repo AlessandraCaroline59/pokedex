@@ -8,17 +8,314 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="pokedex.thepokemoncompany.com.pokedex.activities.TrainerActivity">
+    tools:context="pokedex.thepokemoncompany.com.pokedex.activities.TrainerActivity"
+    android:background="@android:color/holo_red_dark">
 
-    <TextView
-        android:text="Trainer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="131dp"
-        android:layout_marginStart="131dp"
-        android:layout_marginTop="51dp"
-        android:id="@+id/textView2" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="@dimen/layout_margin_top"
+            android:id="@+id/frStats"
+            android:layout_weight="0">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Total Attack"
+                        android:layout_width="@dimen/labels_width"
+                        android:layout_height="@dimen/labels_height"
+                        android:id="@+id/text13"
+                        android:textAlignment="center"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:textColor="@android:color/background_light" />
+
+                    <TextView
+                        android:layout_width="@dimen/result_width"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/text13"
+                        android:id="@+id/myAttackId"
+                        android:textSize="14sp"
+                        android:textAlignment="center"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:paddingTop="@dimen/result_padding_top"
+                        android:textColor="@android:color/background_dark"
+                        android:background="@color/colorAccent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text="Total Defense"
+                        android:layout_width="@dimen/labels_width"
+                        android:layout_height="@dimen/labels_height"
+                        android:id="@+id/text14"
+                        android:textAlignment="center"
+                        android:layout_alignBaseline="@+id/text13"
+                        android:layout_alignBottom="@+id/text13"
+                        android:layout_toLeftOf="@+id/myHpId"
+                        android:layout_toStartOf="@+id/myHpId"
+                        android:textColor="@android:color/background_light" />
+
+                    <TextView
+                        android:layout_width="@dimen/result_width"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/myDefenseId"
+                        android:textAlignment="center"
+                        android:layout_alignBaseline="@+id/myAttackId"
+                        android:layout_alignBottom="@+id/myAttackId"
+                        android:layout_alignLeft="@+id/text14"
+                        android:layout_alignStart="@+id/text14"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:paddingTop="@dimen/result_padding_top"
+                        android:textColor="@android:color/background_dark"
+                        android:background="@color/colorAccent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text="Total Speed"
+                        android:layout_width="@dimen/labels_width"
+                        android:layout_height="@dimen/labels_height"
+                        android:id="@+id/text16"
+                        android:textAlignment="center"
+                        android:layout_alignBaseline="@+id/text15"
+                        android:layout_alignBottom="@+id/text15"
+                        android:textColor="@android:color/background_light" />
+
+                    <TextView
+                        android:layout_width="@dimen/result_width"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/mySpeedId"
+                        android:textAlignment="center"
+                        android:layout_alignBaseline="@+id/myHpId"
+                        android:layout_alignBottom="@+id/myHpId"
+                        android:layout_alignLeft="@+id/text16"
+                        android:layout_alignStart="@+id/text16"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:paddingTop="@dimen/result_padding_top"
+                        android:textColor="@android:color/background_dark"
+                        android:background="@color/colorAccent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text="Total Sp Attack"
+                        android:layout_width="56dp"
+                        android:layout_height="@dimen/labels_height"
+                        android:id="@+id/text17"
+                        android:textAlignment="center"
+                        android:layout_above="@+id/mySatkId"
+                        android:textColor="@android:color/background_light" />
+
+                    <TextView
+                        android:layout_width="@dimen/result_width"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/mySatkId"
+                        android:textAlignment="center"
+                        android:layout_alignBaseline="@+id/mySpeedId"
+                        android:layout_alignBottom="@+id/mySpeedId"
+                        android:layout_alignRight="@+id/text17"
+                        android:layout_alignEnd="@+id/text17"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:paddingTop="@dimen/result_padding_top"
+                        android:textColor="@android:color/background_dark"
+                        android:background="@color/colorAccent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text="Total Sp Defense"
+                        android:layout_width="62dp"
+                        android:layout_height="@dimen/labels_height"
+                        android:id="@+id/text19"
+                        android:textAlignment="center"
+                        android:layout_alignBaseline="@+id/text17"
+                        android:layout_alignBottom="@+id/text17"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        android:textColor="@android:color/background_light" />
+
+                    <TextView
+                        android:layout_width="@dimen/result_width"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/mySdefId"
+                        android:textAlignment="center"
+                        android:layout_alignBaseline="@+id/mySatkId"
+                        android:layout_alignBottom="@+id/mySatkId"
+                        android:layout_alignLeft="@+id/text19"
+                        android:layout_alignStart="@+id/text19"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:paddingTop="@dimen/result_padding_top"
+                        android:textColor="@android:color/background_dark"
+                        android:background="@color/colorAccent" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text="Total Hp"
+                        android:layout_width="46dp"
+                        android:layout_height="@dimen/labels_height"
+                        android:id="@+id/text15"
+                        android:layout_alignBaseline="@+id/text14"
+                        android:layout_alignBottom="@+id/text14"
+                        android:textColor="@android:color/background_light"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:layout_width="@dimen/result_width"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/myHpId"
+                        android:textAlignment="center"
+                        android:layout_alignBaseline="@+id/myDefenseId"
+                        android:layout_alignBottom="@+id/myDefenseId"
+                        android:layout_toLeftOf="@+id/mySpeedId"
+                        android:layout_toStartOf="@+id/mySpeedId"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:paddingTop="@dimen/result_padding_top"
+                        android:textColor="@android:color/background_dark"
+                        android:background="@color/colorAccent" />
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:layout_below="@+id/mySdefId"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/BaseXPWeightId"
+            android:layout_weight="0">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:text="Total Base XP"
+                        android:layout_height="@dimen/labels_height"
+                        android:id="@+id/text9"
+                        android:textSize="14sp"
+                        android:layout_weight="1"
+                        android:layout_below="@+id/myAttackId"
+                        android:layout_toLeftOf="@+id/myDefenseId"
+                        android:layout_toStartOf="@+id/myDefenseId"
+                        android:layout_width="@dimen/labels_width"
+                        android:textColor="@android:color/background_light"
+                        android:textAlignment="center"
+                        android:layout_marginStart="55dp" />
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:id="@+id/myBaseXPId"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:layout_below="@+id/text11"
+                        android:layout_toLeftOf="@+id/text11"
+                        android:layout_toStartOf="@+id/text11"
+                        android:textColor="@android:color/background_dark"
+                        android:background="@color/colorAccent"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="@dimen/result_width"
+                        android:paddingTop="5dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:text="Total Weight"
+                        android:layout_width="@dimen/labels_width"
+                        android:layout_height="@dimen/labels_height"
+                        android:id="@+id/text11"
+                        android:textSize="14sp"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:layout_alignBaseline="@+id/text9"
+                        android:layout_alignBottom="@+id/text9"
+                        android:layout_toRightOf="@+id/text9"
+                        android:layout_toEndOf="@+id/text9"
+                        android:textColor="@android:color/background_light"
+                        android:layout_marginStart="55dp" />
+
+                    <TextView
+                        android:layout_width="@dimen/result_width"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/myPokemonWeightId"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:layout_below="@+id/text11"
+                        android:layout_alignRight="@+id/text11"
+                        android:layout_alignEnd="@+id/text11"
+                        android:textColor="@android:color/background_dark"
+                        android:background="@color/colorAccent"
+                        android:layout_gravity="center_horizontal"
+                        android:paddingTop="5dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/myPokeListId"
+            android:layout_weight="1"
+            android:layout_marginTop="@dimen/layout_margin_top"
+            android:background="@color/colorAccent" />
+    </LinearLayout>
+
 </RelativeLayout>

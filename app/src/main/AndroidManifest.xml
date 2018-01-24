@@ -17,10 +17,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.PokemonActivity" />
-        <activity android:name=".activities.TrainerActivity" />
-        <activity android:name=".activities.BestPokemonActivity" />
-        <activity android:name=".activities.DetailsActivity"></activity>
+        <activity android:name=".activities.PokemonActivity"
+                  android:label="@string/list_name"  />
+        <activity android:name=".activities.TrainerActivity"
+                  android:label="@string/my_pokemons_name"/>
+        <activity android:name=".activities.BestPokemonActivity"
+                  android:label="@string/strongest_pokemon_name"/>
+        <activity android:name=".activities.DetailsActivity"
+                  android:label="@string/details_name"></activity>
     </application>
 
 </manifest>

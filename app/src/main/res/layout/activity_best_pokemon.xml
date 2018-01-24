@@ -8,17 +8,314 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="pokedex.thepokemoncompany.com.pokedex.activities.BestPokemonActivity">
+    tools:context="pokedex.thepokemoncompany.com.pokedex.activities.BestPokemonActivity"
+    android:background="@android:color/holo_blue_light">
 
-    <TextView
-        android:text="Best Pokémons"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="115dp"
-        android:layout_marginStart="115dp"
-        android:layout_marginTop="27dp"
-        android:id="@+id/textView" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="@dimen/layout_margin_top"
+            android:id="@+id/frameStats"
+            android:layout_weight="0">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Total Attack"
+                        android:layout_width="@dimen/labels_width"
+                        android:layout_height="@dimen/labels_height"
+                        android:id="@+id/txt13"
+                        android:textAlignment="center"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:textColor="@android:color/background_light" />
+
+                    <TextView
+                        android:layout_width="@dimen/result_width"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt13"
+                        android:id="@+id/sumAttackId"
+                        android:textSize="14sp"
+                        android:textAlignment="center"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:paddingTop="@dimen/result_padding_top"
+                        android:textColor="@android:color/background_dark"
+                        android:background="@color/colorAccent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text="Total Defense"
+                        android:layout_width="@dimen/labels_width"
+                        android:layout_height="@dimen/labels_height"
+                        android:id="@+id/txt14"
+                        android:textAlignment="center"
+                        android:layout_alignBaseline="@+id/txt13"
+                        android:layout_alignBottom="@+id/txt13"
+                        android:layout_toLeftOf="@+id/sumHpId"
+                        android:layout_toStartOf="@+id/sumHpId"
+                        android:textColor="@android:color/background_light" />
+
+                    <TextView
+                        android:layout_width="@dimen/result_width"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/sumDefenseId"
+                        android:textAlignment="center"
+                        android:layout_alignBaseline="@+id/sumAttackId"
+                        android:layout_alignBottom="@+id/sumAttackId"
+                        android:layout_alignLeft="@+id/txt14"
+                        android:layout_alignStart="@+id/txt14"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:paddingTop="@dimen/result_padding_top"
+                        android:textColor="@android:color/background_dark"
+                        android:background="@color/colorAccent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text="Total Speed"
+                        android:layout_width="@dimen/labels_width"
+                        android:layout_height="@dimen/labels_height"
+                        android:id="@+id/txt16"
+                        android:textAlignment="center"
+                        android:layout_alignBaseline="@+id/txt15"
+                        android:layout_alignBottom="@+id/txt15"
+                        android:textColor="@android:color/background_light" />
+
+                    <TextView
+                        android:layout_width="@dimen/result_width"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/sumSpeedId"
+                        android:textAlignment="center"
+                        android:layout_alignBaseline="@+id/sumHpId"
+                        android:layout_alignBottom="@+id/sumHpId"
+                        android:layout_alignLeft="@+id/txt16"
+                        android:layout_alignStart="@+id/txt16"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:paddingTop="@dimen/result_padding_top"
+                        android:textColor="@android:color/background_dark"
+                        android:background="@color/colorAccent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text="Total Sp Attack"
+                        android:layout_width="56dp"
+                        android:layout_height="@dimen/labels_height"
+                        android:id="@+id/txt17"
+                        android:textAlignment="center"
+                        android:layout_above="@+id/sumSatkId"
+                        android:textColor="@android:color/background_light" />
+
+                    <TextView
+                        android:layout_width="@dimen/result_width"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/sumSatkId"
+                        android:textAlignment="center"
+                        android:layout_alignBaseline="@+id/sumSpeedId"
+                        android:layout_alignBottom="@+id/sumSpeedId"
+                        android:layout_alignRight="@+id/txt17"
+                        android:layout_alignEnd="@+id/txt17"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:paddingTop="@dimen/result_padding_top"
+                        android:textColor="@android:color/background_dark"
+                        android:background="@color/colorAccent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text="Total Sp Defense"
+                        android:layout_width="62dp"
+                        android:layout_height="@dimen/labels_height"
+                        android:id="@+id/txt19"
+                        android:textAlignment="center"
+                        android:layout_alignBaseline="@+id/txt17"
+                        android:layout_alignBottom="@+id/txt17"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        android:textColor="@android:color/background_light" />
+
+                    <TextView
+                        android:layout_width="@dimen/result_width"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/sumSdefId"
+                        android:textAlignment="center"
+                        android:layout_alignBaseline="@+id/sumSatkId"
+                        android:layout_alignBottom="@+id/sumSatkId"
+                        android:layout_alignLeft="@+id/txt19"
+                        android:layout_alignStart="@+id/txt19"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:paddingTop="@dimen/result_padding_top"
+                        android:textColor="@android:color/background_dark"
+                        android:background="@color/colorAccent" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text="Total   Hp"
+                        android:layout_width="46dp"
+                        android:layout_height="@dimen/labels_height"
+                        android:id="@+id/txt15"
+                        android:layout_alignBaseline="@+id/txt14"
+                        android:layout_alignBottom="@+id/txt14"
+                        android:textColor="@android:color/background_light"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:layout_width="@dimen/result_width"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/sumHpId"
+                        android:textAlignment="center"
+                        android:layout_alignBaseline="@+id/sumDefenseId"
+                        android:layout_alignBottom="@+id/sumDefenseId"
+                        android:layout_toLeftOf="@+id/sumSpeedId"
+                        android:layout_toStartOf="@+id/sumSpeedId"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:paddingTop="@dimen/result_padding_top"
+                        android:textColor="@android:color/background_dark"
+                        android:background="@color/colorAccent" />
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:layout_below="@+id/sumSdefId"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/BaseXPWeightId"
+            android:layout_weight="0">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:text="Total Base XP"
+                        android:layout_height="@dimen/labels_height"
+                        android:id="@+id/txt9"
+                        android:textSize="14sp"
+                        android:layout_weight="1"
+                        android:layout_below="@+id/sumAttackId"
+                        android:layout_toLeftOf="@+id/sumDefenseId"
+                        android:layout_toStartOf="@+id/sumDefenseId"
+                        android:layout_width="@dimen/labels_width"
+                        android:textColor="@android:color/background_light"
+                        android:textAlignment="center"
+                        android:layout_marginStart="55dp" />
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:id="@+id/sumBaseXPId"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:layout_below="@+id/txt11"
+                        android:layout_toLeftOf="@+id/txt11"
+                        android:layout_toStartOf="@+id/txt11"
+                        android:textColor="@android:color/background_dark"
+                        android:background="@color/colorAccent"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="@dimen/result_width"
+                        android:paddingTop="5dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:text="Total Weight"
+                        android:layout_width="@dimen/labels_width"
+                        android:layout_height="@dimen/labels_height"
+                        android:id="@+id/txt11"
+                        android:textSize="14sp"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:layout_alignBaseline="@+id/txt9"
+                        android:layout_alignBottom="@+id/txt9"
+                        android:layout_toRightOf="@+id/txt9"
+                        android:layout_toEndOf="@+id/txt9"
+                        android:textColor="@android:color/background_light"
+                        android:layout_marginStart="55dp" />
+
+                    <TextView
+                        android:layout_width="@dimen/result_width"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/sumPokemonWeightId"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:layout_below="@+id/txt11"
+                        android:layout_alignRight="@+id/txt11"
+                        android:layout_alignEnd="@+id/txt11"
+                        android:textColor="@android:color/background_dark"
+                        android:background="@color/colorAccent"
+                        android:layout_gravity="center_horizontal"
+                        android:paddingTop="5dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/bestPokeListId"
+            android:layout_weight="1"
+            android:layout_marginTop="@dimen/layout_margin_top"
+            android:background="@color/colorAccent" />
+    </LinearLayout>
+
 </RelativeLayout>
